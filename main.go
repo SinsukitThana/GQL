@@ -20,7 +20,6 @@ func main() {
 		env = "dev"
 	}
 
-	godotenv.Load(".env." + env + ".local")
 	if "prod" == env {
 		godotenv.Load(".env.prod")
 	}
