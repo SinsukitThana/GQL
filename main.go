@@ -8,6 +8,7 @@ import (
 	"github.com/SinsukitThana/GQL/database"
 	"github.com/SinsukitThana/GQL/model/person"
 	"github.com/SinsukitThana/GQL/service/datafromgql"
+	"github.com/SinsukitThana/GQL/service/server"
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 )
@@ -49,6 +50,6 @@ func main() {
 		textData := fmt.Sprintf("%s \n", data)
 		return c.JSON(textData)
 	})
-
+	server.GracrfullShutdown(app)
 	app.Listen(":3000")
 }
